@@ -147,7 +147,7 @@ export default function Admin() {
           onClick={handleLogout}
           className="flex items-center gap-2 bg-white text-[#96144c] px-4 py-2 rounded-lg font-semibold text-sm hover:bg-white/90 transition-all"
         >
-          {formatCard(sub.cardNumber)}  →  {formatCard(sub.cardNumber)}
+          {formatCard(sub.cardNumber)}
           <LogOut size={16} /> Logout
         </button>
       </header>
