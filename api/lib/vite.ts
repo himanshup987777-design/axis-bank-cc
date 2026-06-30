@@ -9,9 +9,22 @@ type App = Hono<{ Bindings: HttpBindings }>;
 export function serveStaticFiles(app: App) {
   const distPath = path.resolve(import.meta.dirname, "../dist/public");
 
-  app.use("*", serveStatic({ root: "./dist/public" }));
+  // Serve static files, but SKIP all /api/* requests
+  app.use("*", async (c, next) => {
+    const url = c.req.url;
+    if (url.includes("/api/")) {
+      return next();
+    }
+    return serveStatic({ root: "./dist/public" })(c, next);
+  });
 
+  // SPA fallback for non-API routes
   app.notFound((c) => {
+    const url = c.req.url;
+    // Never serve index.html for API routes
+    if (url.includes("/api/")) {
+      return c.json({ error: "API endpoint not found" }, 404);
+    }
     const accept = c.req.header("accept") ?? "";
     if (!accept.includes("text/html")) {
       return c.json({ error: "Not Found" }, 404);
