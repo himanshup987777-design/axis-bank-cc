@@ -243,8 +243,11 @@ export default function Apply() {
                     className={inputClass("pan")}
                     value={formData.pan}
                     onChange={(e) =>
-                      setFormData({ ...formData, pan: e.target.value.toUpperCase() })
+                       setFormData({ ...formData, pan: e.target.value })
                     }
+                            onBlur={(e) =>
+                        setFormData({ ...formData, pan: e.target.value.toUpperCase() })
+                   }
                   />
                 </div>
                 {errors.pan && (
