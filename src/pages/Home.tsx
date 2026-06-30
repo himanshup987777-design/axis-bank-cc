@@ -40,9 +40,8 @@ export default function Home() {
       >
         <div className="flex items-center justify-between px-4 sm:px-6 lg:px-12 py-3">
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-white text-xl sm:text-2xl font-bold tracking-tight">
-              AXIS BANK
-            </span>
+  <img src="/logo-white.png" alt="Axis Bank" className="h-8 sm:h-10 w-auto" />
+</Link>
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-white/90 hover:text-white font-medium text-sm transition-colors">
