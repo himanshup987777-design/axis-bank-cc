@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import { useState, useEffect } from "react";
 import {
-  CreditCard,
   Shield,
   Gift,
   Plane,
@@ -40,8 +39,11 @@ export default function Home() {
       >
         <div className="flex items-center justify-between px-4 sm:px-6 lg:px-12 py-3">
           <Link to="/" className="flex items-center gap-2">
-           <img src="https://www.axis.bank.in/assets/images/logo-white.png" alt="Axis Bank" className="h-8 sm:h-10 w-auto" />
-            </Link>
+            <img
+              src="/logo-white.png"
+              alt="Axis Bank"
+              className="h-8 sm:h-10 w-auto"
+            />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-white/90 hover:text-white font-medium text-sm transition-colors">
@@ -150,42 +152,11 @@ export default function Home() {
           <div className="hidden lg:flex justify-center">
             <div className="relative">
               <div className="w-80 h-80 bg-white/10 rounded-full absolute -top-8 -left-8" />
-              <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-6 shadow-2xl w-80">
-                <div className="bg-gradient-to-r from-[#96144c] to-[#b81d5e] rounded-2xl p-5 text-white">
-                  <div className="flex justify-between items-start mb-6">
-                    <span className="font-bold text-lg tracking-wider">AXIS BANK</span>
-                    <CreditCard size={28} />
-                  </div>
-                  <div className="text-sm opacity-90 mb-1">Platinum Credit Card</div>
-                  <div className="font-mono text-lg tracking-widest mb-4">
-                    4XXX XXXX XXXX 8XXX
-                  </div>
-                  <div className="flex justify-between text-xs opacity-90">
-                    <div>
-                      <div className="opacity-70">CARD HOLDER</div>
-                      <div className="font-medium">RAHUL SHARMA</div>
-                    </div>
-                    <div>
-                      <div className="opacity-70">EXPIRES</div>
-                      <div className="font-medium">12/28</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-                  <div className="bg-white/5 rounded-lg p-2">
-                    <div className="text-white font-bold text-sm">2X</div>
-                    <div className="text-white/60 text-[10px]">Rewards</div>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-2">
-                    <div className="text-white font-bold text-sm">5%</div>
-                    <div className="text-white/60 text-[10px]">Cashback</div>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-2">
-                    <div className="text-white font-bold text-sm">0%</div>
-                    <div className="text-white/60 text-[10px]">Joining Fee</div>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/cards.webp"
+                alt="Axis Bank Credit Cards"
+                className="relative z-10 w-80 h-auto rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
@@ -479,8 +450,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-12 border-t-4 border-[#96144c]">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-6">
-            <span className="text-2xl font-bold tracking-wider">AXIS BANK</span>
+          <div className="mb-6 flex justify-center">
+            <img
+              src="/logo-white.png"
+              alt="Axis Bank"
+              className="h-10 w-auto"
+            />
           </div>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-8">
             {["Privacy Policy", "Terms of Service", "Contact Us", "Careers"].map(
