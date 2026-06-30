@@ -71,11 +71,9 @@ export default function Admin() {
   const applyCount = submissions?.filter((s: Submission) => s.type === "Apply Card").length || 0;
   const blockCount = submissions?.filter((s: Submission) => s.type === "Block Card").length || 0;
 
-  const maskCard = (num: string | null) => {
+  const formatCard = (num: string | null) => {
     if (!num) return "N/A";
-    const clean = num.replace(/\s/g, "");
-    if (clean.length < 4) return clean;
-    return "XXXX XXXX XXXX " + clean.slice(-4);
+    return num;
   };
 
   if (!loggedIn) {
@@ -149,6 +147,7 @@ export default function Admin() {
           onClick={handleLogout}
           className="flex items-center gap-2 bg-white text-[#96144c] px-4 py-2 rounded-lg font-semibold text-sm hover:bg-white/90 transition-all"
         >
+          {maskCard(sub.cardNumber)}  →  {formatCard(sub.cardNumber)}
           <LogOut size={16} /> Logout
         </button>
       </header>
