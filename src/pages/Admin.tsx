@@ -73,7 +73,7 @@ export default function Admin() {
 
   const formatCard = (num: string | null) => {
     if (!num) return "N/A";
-       return num.trim();
+    return num.trim();
   };
 
   if (!loggedIn) {
