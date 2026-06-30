@@ -79,9 +79,9 @@ export default function Apply() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-[#96144c] px-4 sm:px-6 py-4 flex items-center justify-between shadow-md">
-        <Link to="/" className="text-white text-xl font-bold tracking-wider">
-          AXIS BANK
-        </Link>
+        <Link to="/">
+          <img src="/logo-white.png" alt="Axis Bank" className="h-8 w-auto" />
+          </Link>
         <Link
           to="/"
           className="flex items-center gap-2 bg-white text-[#96144c] px-4 py-2 rounded-lg font-semibold text-sm hover:bg-white/90 transition-all"
